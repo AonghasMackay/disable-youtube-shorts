@@ -8,3 +8,6 @@ shorts.forEach(function (short)
     //delete each shorts element from the dom
     short.remove();
 });
+
+//scroll to top of the page
+window.scrollTop(0);
