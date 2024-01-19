@@ -21,7 +21,7 @@ setTimeout(function() {
 
     //scroll to top of the page
     window.scrollTo(0, 0);
-}, 3000);
+}, 1000);
 
 function removeShortsMenuItem() {
     let shortsMenuItem = document.querySelector('[title="Shorts"]');
