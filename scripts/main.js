@@ -2,12 +2,18 @@
 
 const shortsDataAttribute = 'is-shorts';
 let shorts = document.querySelectorAll('[' + shortsDataAttribute + ']');
+let shortsMenuItem = document.querySelector('[title="Shorts"]');
 
-shorts.forEach(function (short) 
+if(shortsMenuItem) 
+{
+    shortsMenuItem.remove();
+}
+
+shorts.forEach(function (shortsElement) 
 {
     //delete each shorts element from the dom
-    short.remove();
+    shortsElement.remove();
 });
 
 //scroll to top of the page
-window.scrollTop(0);
+window.scrollTo(0, 0);
