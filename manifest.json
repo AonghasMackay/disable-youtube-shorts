@@ -27,7 +27,6 @@
     }
   ],
   "action": {
-    "default_popup": "popups/blank.html",
     "default_icon": "images/disable-yt-shorts-icon-16.png"
   }
 }
