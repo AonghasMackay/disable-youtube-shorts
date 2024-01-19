@@ -1,19 +1,33 @@
 'use strict';
 
-const shortsDataAttribute = 'is-shorts';
-let shorts = document.querySelectorAll('[' + shortsDataAttribute + ']');
-let shortsMenuItem = document.querySelector('[title="Shorts"]');
+//timeout to get round irregular page load times.
+//Is a bit hacky but youtube doesn't seem to consistently trigger document_end
+setTimeout(function() {
+    const shortsDataAttribute = 'is-shorts';
+    let shorts = document.querySelectorAll('[' + shortsDataAttribute + ']');
+    let guideButton = document.getElementById('guide-button');
 
-if(shortsMenuItem) 
-{
-    shortsMenuItem.remove();
+    removeShortsMenuItem();
+
+    shorts.forEach(function (shortsElement) 
+    {
+        //delete each shorts element from the dom
+        shortsElement.remove();
+    });
+
+    guideButton.addEventListener('click', function() {
+        removeShortsMenuItem();
+    });
+
+    //scroll to top of the page
+    window.scrollTo(0, 0);
+}, 3000);
+
+function removeShortsMenuItem() {
+    let shortsMenuItem = document.querySelector('[title="Shorts"]');
+
+    if(shortsMenuItem) 
+    {
+        shortsMenuItem.remove();
+    }
 }
-
-shorts.forEach(function (shortsElement) 
-{
-    //delete each shorts element from the dom
-    shortsElement.remove();
-});
-
-//scroll to top of the page
-window.scrollTo(0, 0);
